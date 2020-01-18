@@ -10,3 +10,9 @@ Text.create([
   { title: '神学経典' },
   { title: 'ハンムラビ法典' }
 ])
+
+AnswerSheet.create([
+  { description: "解答用紙0115" , text_id: 1},
+  { description: "解答用紙0215" , text_id: 1},
+  { description: "解答用紙x" , text_id: 3},
+])
