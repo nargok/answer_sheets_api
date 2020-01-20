@@ -16,3 +16,7 @@ AnswerSheet.create([
   { description: "解答用紙0215" , text_id: 1},
   { description: "解答用紙x" , text_id: 3},
 ])
+
+AnswerType.create([
+    { name: '択一:A'}
+])
