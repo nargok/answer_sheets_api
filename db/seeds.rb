@@ -20,3 +20,9 @@ AnswerSheet.create([
 AnswerType.create([
     { name: '択一:A'}
 ])
+
+Answer.create([
+    { answer_sheet_id: AnswerSheet.first.id, answer_no: 1, answer: 'C', answer_type_id: AnswerType.first.id},
+    { answer_sheet_id: AnswerSheet.first.id, answer_no: 1, answer: 'A', answer_type_id: AnswerType.first.id},
+    { answer_sheet_id: AnswerSheet.first.id, answer_no: 1, answer: 'C', answer_type_id: AnswerType.first.id},
+])

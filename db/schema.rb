@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_20_232621) do
+ActiveRecord::Schema.define(version: 2020_01_20_233645) do
 
   create_table "answer_sheets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "text_id"
@@ -24,6 +24,17 @@ ActiveRecord::Schema.define(version: 2020_01_20_232621) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.bigint "answer_sheet_id"
+    t.integer "answer_no"
+    t.string "answer"
+    t.bigint "answer_type_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["answer_sheet_id"], name: "index_answers_on_answer_sheet_id"
+    t.index ["answer_type_id"], name: "index_answers_on_answer_type_id"
   end
 
   create_table "texts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
