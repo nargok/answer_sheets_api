@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   namespace 'api' do
     namespace 'v1' do
       resources :texts do
-        resources :answer_sheets, shallow: true
+        resources :answer_sheets, shallow: true do
+          resources :answers, only: [:index, :create]
+        end
       end
     end
   end

@@ -5,24 +5,26 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Text.create([
-  { title: 'アナと雪の女' },
-  { title: '神学経典' },
-  { title: 'ハンムラビ法典' }
+now = Time.zone.now
+
+Text.insert_all([
+  { title: 'アナと雪の女', created_at: now, updated_at: now },
+  { title: '神学経典', created_at: now, updated_at: now },
+  { title: 'ハンムラビ法典', created_at: now, updated_at: now }
 ])
 
-AnswerSheet.create([
-  { description: "解答用紙0115" , text_id: 1},
-  { description: "解答用紙0215" , text_id: 1},
-  { description: "解答用紙x" , text_id: 3},
+AnswerSheet.insert_all([
+  { description: "解答用紙0115" , text_id: 1, created_at: now, updated_at: now },
+  { description: "解答用紙0215" , text_id: 1, created_at: now, updated_at: now },
+  { description: "解答用紙x" , text_id: 3, created_at: now, updated_at: now },
 ])
 
-AnswerType.create([
-    { name: '択一:A'}
+AnswerType.insert_all([
+    { name: '択一:A', created_at: now, updated_at: now }
 ])
 
-Answer.create([
-    { answer_sheet_id: AnswerSheet.first.id, answer_no: 1, answer: 'C', answer_type_id: AnswerType.first.id},
-    { answer_sheet_id: AnswerSheet.first.id, answer_no: 1, answer: 'A', answer_type_id: AnswerType.first.id},
-    { answer_sheet_id: AnswerSheet.first.id, answer_no: 1, answer: 'C', answer_type_id: AnswerType.first.id},
+Answer.insert_all([
+    { answer_sheet_id: AnswerSheet.first.id, answer_no: 1, answer: 'C', answer_type_id: AnswerType.first.id, created_at: now, updated_at: now },
+    { answer_sheet_id: AnswerSheet.first.id, answer_no: 2, answer: 'A', answer_type_id: AnswerType.first.id, created_at: now, updated_at: now },
+    { answer_sheet_id: AnswerSheet.first.id, answer_no: 3, answer: 'C', answer_type_id: AnswerType.first.id, created_at: now, updated_at: now },
 ])
