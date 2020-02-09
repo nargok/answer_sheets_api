@@ -42,7 +42,7 @@ module Api
       end
 
       def text_params
-        params.require(:text).permit(:title)
+        params.require(:text).permit(:title, :publisher, :published_date, :image_url)
       end
 
     end

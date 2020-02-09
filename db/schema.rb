@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_20_233645) do
+ActiveRecord::Schema.define(version: 2020_02_09_063035) do
 
   create_table "answer_sheets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "text_id"
@@ -41,6 +41,9 @@ ActiveRecord::Schema.define(version: 2020_01_20_233645) do
     t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "publisher"
+    t.date "published_date"
+    t.string "image_url"
   end
 
 end
